@@ -14,7 +14,7 @@ namespace AddressBook
         {
             ContactList = new List<CreateContact>();        // Initaillizing list 
         }
-        public void addContact(CreateContact createPerson)
+        public void addContact( CreateContact createPerson)
         {
             Console.WriteLine("Adding a New Contact for " + createPerson.Firstname);      // Creating a Method and Adding object in a list 
             ContactList.Add(createPerson);
@@ -84,7 +84,7 @@ namespace AddressBook
         {
             int choice;
             String LName, Address, City, State, EMailID;
-            long zip,PhoneNo;
+            long zip, PhoneNo;
             Console.WriteLine("Choose the Feild to Edit:");
             Console.WriteLine("1. Last Name \t 2. Address \t 3. City \t 4. State \t 5. Zip \t 6. Phone No \t 7. EMail ID");
             choice = Convert.ToInt32(Console.ReadLine());
@@ -127,10 +127,30 @@ namespace AddressBook
                     break;
             }
             Console.WriteLine("Contact Edited Succesfully");
-
-
         }
+        public void DeleteContact()
+        {
+            String EName;
+            int temp = 0;
+            ShowContactOutput();
+            Console.WriteLine("Enter the Name of Contact you want to Delete:");
+            EName = Console.ReadLine();
 
-	}
+            for (int i = 0; i < ContactList.Count; i++)
+            {
+                if (EName.Equals(ContactList[i].Firstname))
+                {
+                    temp = 1;
+                    Console.WriteLine("The Contact Found...");
+                    ContactList.RemoveAt(i);
+                    Console.WriteLine("Contact Deleted Succesfully");
+                }
+            }
+            if (temp == 0)
+            {
+                Console.WriteLine("The Contact is Not Found...");
+            }
+        }
+    }
 }
 
