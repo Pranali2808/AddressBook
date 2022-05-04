@@ -4,22 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBook
+namespace AddressBookSystem
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" Welcome To Address Book Program on Master ");
-            CreateContact contactdetails = new CreateContact("Pranali", "Rane", "Bhusawal", "Jalgaon", "Maharashtra", 425305, 260101, "ranepranali1997h@gmail.com");
-            Console.WriteLine("Contact Detail is Created for : " + contactdetails.Firstname + " " + contactdetails.Lastname);
-            Console.WriteLine("Address Is :" + contactdetails.Address);
-            Console.WriteLine("City Is : " + contactdetails.City);
-            Console.WriteLine("State Is : " + contactdetails.State);
-            Console.WriteLine("Zip Is : " + contactdetails.Zip);
-            Console.WriteLine("Phone Number Is : " + contactdetails.PhoneNumber);
-            Console.WriteLine("Email Is : " + contactdetails.Email);
+
+            Console.WriteLine("Welcome to Address Book Program");
+            // UC1 : Ability to create a Contacts in Address Book with first and last names, address,
+            // city, state, zip, phone number and email...
+            AddressBook.Display();
+            AddressBook.AddContact();
             Console.ReadLine();
         }
     }
 }
+        
+            
+            
+        
+    
+
